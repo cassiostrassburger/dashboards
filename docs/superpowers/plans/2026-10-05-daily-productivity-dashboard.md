@@ -1,16 +1,16 @@
-# Painel diário de produtividade — plano de implementação
+# Daily Productivity Dashboard Implementation Plan
 
-> **Para agentes implementadores:** SUBSKILL OBRIGATÓRIA: use `superpowers:subagent-driven-development` (recomendado) ou `superpowers:executing-plans` para executar este plano tarefa por tarefa. As etapas usam caixas de seleção.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use `superpowers:subagent-driven-development` (recommended) or `superpowers:executing-plans` to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Objetivo:** Criar uma base privada no Google Drive e um site privado, atualizado após cada registro diário enviado pelo usuário na conversa, com indicadores de produção, fila, relações entre processos e palavras-chave.
+**Goal:** Criar uma base privada no Google Drive e um site privado, atualizado após cada registro diário enviado pelo usuário na conversa, com indicadores de produção, fila, relações entre processos e palavras-chave.
 
-**Arquitetura:** Uma planilha privada no Drive será a fonte canônica. O assistente preserva e estrutura cada mensagem diária, atualiza a planilha e prepara um snapshot privado; código Python do repositório público gera os gráficos e a página estática para publicação privada. A planilha e o snapshot publicado permanecem fora do GitHub.
+**Architecture:** Uma planilha privada no Drive será a fonte canônica. O assistente preserva e estrutura cada mensagem diária, atualiza a planilha e prepara um snapshot privado; código Python do repositório público gera os gráficos e a página estática para publicação privada. A planilha e o snapshot publicado permanecem fora do GitHub.
 
-**Tecnologias:** Python, pandas, Pydantic, Plotly, HTML/CSS/JavaScript, Google Sheets, publicação privada de site e pytest.
+**Tech Stack:** Python, pandas, Pydantic, Plotly, HTML/CSS/JavaScript, Google Sheets, publicação privada de site e pytest.
 
-**Especificação:** `docs/superpowers/specs/2026-10-05-daily-productivity-dashboard-design.md`
+**Spec:** `docs/superpowers/specs/2026-10-05-daily-productivity-dashboard-design.md`
 
-## Restrições globais
+## Global Constraints
 
 - Manter os dados canônicos em planilha privada do Google Drive.
 - Manter o repositório público sem registros, identificadores de processos, valores de produção ou snapshots privados.
@@ -26,7 +26,7 @@
 - Exibir o cartão de palavras-chave imediatamente acima do cartão da divergência.
 - Carregar os valores da divergência do Drive; não fixá-los no código público.
 
-## Foco de revisão
+## Review Focus
 
 - Mensagem com várias atividades, data ou quantidade ausente: preservar o original e deixar campos ausentes sem estimativa. Fixar em teste de atividade.
 - Série mensal com lacuna ou versões divergentes: preservar a lacuna e a proveniência dos valores. Fixar em teste de migração e métricas.
