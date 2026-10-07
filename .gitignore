@@ -1,0 +1,9 @@
+# O repositório publica apenas o código genérico do painel pessoal.
+private_data/
+site-package/
+painel_produtividade_*.html
+painel_produtividade_*.tar.gz
+*.snapshot.json
+*.private.json
+__pycache__/
+*.py[cod]
